@@ -43,16 +43,3 @@ spec:
               number: 80
     host: nginx-demo.homelab.com
 ---
-# apiVersion: traefik.containo.us/v1alpha1
-# kind: IngressRoute
-# metadata:
-#   name: nginx
-# spec:
-#   entryPoints:
-#     - websecure
-#   routes:
-#     - kind: Rule
-#       match: Host(`nginx-demo.homelab.com`)
-#       services:
-#         - name: nginx
-#           port: 3000

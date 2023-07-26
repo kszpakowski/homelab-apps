@@ -17,7 +17,8 @@ spec:
         matchLabels:
           app.kubernetes.io/name: prometheus
   - from:
-      - podSelector:
+      - namespaceSelector: {}
+        podSelector:
           matchLabels:
             app.kubernetes.io/name: traefik
     ports:

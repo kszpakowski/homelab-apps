@@ -1,0 +1,38 @@
+# https://uthark.github.io/post/2021-10-06-running-pihole-kubernetes/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: unbound
+  name: unbound
+spec:
+  hostNetwork: true
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unbound
+  template:
+    metadata:
+      labels:
+        app: unbound
+    spec:
+      containers:
+        - image: klutchell/unbound:main
+          name: unbound
+          resources:
+            requests:
+              memory: 128Mi
+              cpu: 100m
+            limits:
+              memory: 256Mi
+              cpu: 300m
+          ports:
+            - containerPort: 53
+          volumeMounts:
+            - name: unbound-config
+              mountPath: /etc/unbound/custom.conf.d/custom.conf
+              subPath: custom.conf
+    volumes:
+      - name: unbound-config
+        configMap:
+          name: custom-configmap

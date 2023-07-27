@@ -6,7 +6,6 @@ metadata:
     app: unbound
   name: unbound
 spec:
-  hostNetwork: true
   replicas: 1
   selector:
     matchLabels:
@@ -16,6 +15,7 @@ spec:
       labels:
         app: unbound
     spec:
+      hostNetwork: true
       containers:
         - image: klutchell/unbound:main
           name: unbound
@@ -32,7 +32,7 @@ spec:
             - name: unbound-config
               mountPath: /etc/unbound/custom.conf.d/custom.conf
               subPath: custom.conf
-    volumes:
-      - name: unbound-config
-        configMap:
-          name: custom-configmap
+      volumes:
+        - name: unbound-config
+          configMap:
+            name: custom-configmap

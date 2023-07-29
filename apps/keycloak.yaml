@@ -14,6 +14,8 @@ spec:
     path: keycloak
     repoURL: 'https://github.com/kszpakowski/homelab-apps.git'
     targetRevision: HEAD
+    directory:
+      recurse: true
   sources: []
   project: default
   syncPolicy:

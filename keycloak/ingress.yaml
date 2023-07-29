@@ -12,5 +12,5 @@ spec:
           service:
             name: keycloak
             port:
-              number: 80
+              number: 8080
     host: keycloak.homelab.com

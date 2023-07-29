@@ -20,7 +20,7 @@ spec:
             - containerPort: 5432
           env:
           - name:   POSTGRES_DB
-            value:  postgresdb
+            value:  keycloak
           - name: POSTGRES_USER
             value: admin
           - name: POSTGRES_PASSWORD

@@ -17,7 +17,16 @@ spec:
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:21.1
-          args: ["start-dev"]
+          args: 
+          - "start-dev"
+          - --db 
+          - postgres
+          - --db-url-host
+          - postgres 
+          - --db-username
+          - admin 
+          - --db-password
+          - test123
           env:
             - name: KEYCLOAK_ADMIN
               value: "admin"

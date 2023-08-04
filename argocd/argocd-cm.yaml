@@ -15,7 +15,4 @@ data:
         name: Keycloak
         config:
           issuer: http://keycloak.homelab.com/realms/kubernetes
-          clientID: kubernetes
-
-          # Dex's issuer URL + "/callback"
-          redirectURI: http://argocd-dex-server:5556/callback
+          clientID: argocd

@@ -4,5 +4,7 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  policy.default: role:readonly
+  # policy.default: role:readonly
+  policy.csv: |
+    g, ArgoCDAdmins, role:admin
   

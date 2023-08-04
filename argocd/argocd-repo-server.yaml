@@ -1,6 +1,0 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: argocd-repo-server
-spec:
-  revisionHistoryLimit: 0

@@ -10,3 +10,8 @@ patchesStrategicMerge:
 - argocd-repo-server.yaml
 - argocd-server.yaml
 - dex.yaml
+patches:
+- path: common-deployment-patch.yaml
+  target:
+    kind: Deployment
+  

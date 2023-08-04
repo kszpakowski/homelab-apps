@@ -14,7 +14,7 @@ data:
         id: keycloak
         name: Keycloak
         config:
-          issuer: http://keycloak.homelab.com/realms/kubernetes/
+          issuer: http://keycloak.homelab.com/realms/kubernetes
           clientID: kubernetes
 
           # Dex's issuer URL + "/callback"

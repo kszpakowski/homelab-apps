@@ -3,7 +3,6 @@ kind: IngressRoute
 metadata:
   annotations:
   name: argocd-server
-  namespace: argocd
 spec:
   entryPoints:
   - websecure

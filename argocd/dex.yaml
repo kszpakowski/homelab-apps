@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: argocd-dex-server
 spec:
+  revisionHistoryLimit: 0
   template:
     spec:
       hostAliases:

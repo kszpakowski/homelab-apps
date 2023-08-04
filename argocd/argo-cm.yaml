@@ -18,4 +18,4 @@ data:
           clientID: kubernetes
 
           # Dex's issuer URL + "/callback"
-          redirectURI: http://127.0.0.1:5556/callback
+          redirectURI: http://argocd-dex-server:5556/callback

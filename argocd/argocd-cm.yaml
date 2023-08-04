@@ -17,3 +17,5 @@ data:
         config:
           issuer: http://keycloak.homelab.com/realms/kubernetes
           clientID: argocd
+          groups:
+          - ArgoCDAdmins

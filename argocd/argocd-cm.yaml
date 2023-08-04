@@ -10,15 +10,15 @@ data:
   url: https://argocd.homelab.com
   dex.config: |
     connectors:
-      - type: oidc
-        id: keycloak
-        name: Keycloak
-        config:
-          issuer: http://keycloak.keycloak/realms/kubernetes/
-          clientID: kubernetes
+      # - type: oidc
+      #   id: keycloak
+      #   name: Keycloak
+      #   config:
+      #     issuer: http://keycloak.keycloak/realms/kubernetes/
+      #     clientID: kubernetes
 
-          # Dex's issuer URL + "/callback"
-          redirectURI: http://argocd-dex-server:5556/callback
+      #     # Dex's issuer URL + "/callback"
+      #     redirectURI: http://argocd-dex-server:5556/callback
       - type: github
         id: github
         name: GitHub

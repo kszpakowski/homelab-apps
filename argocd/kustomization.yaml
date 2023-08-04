@@ -4,4 +4,4 @@ resources:
 - argo-cm.yaml
 - argocd-cmd-params-cm.yaml
 - ingress.yaml
-- ../base
+- base

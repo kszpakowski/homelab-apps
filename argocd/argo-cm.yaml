@@ -4,7 +4,6 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
   labels:
-    app.kubernetes.io/instance: argocd
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
@@ -15,7 +14,7 @@ data:
         id: keycloak
         name: Keycloak
         config:
-          issuer: http://keycloak.homelab.com/realms/kubernetes/
+          issuer: http://keycloak.keycloak/realms/kubernetes/
           clientID: kubernetes
 
           # Dex's issuer URL + "/callback"

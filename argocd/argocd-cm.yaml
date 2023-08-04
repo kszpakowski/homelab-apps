@@ -1,4 +1,5 @@
 # https://github.com/dexidp/website/blob/main/content/docs/connectors/oidc.md
+# https://argo-cd.readthedocs.io/en/stable/operator-manual/user-management/keycloak
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -16,4 +17,4 @@ data:
         config:
           issuer: http://keycloak.homelab.com/realms/kubernetes
           clientID: argocd
-        requestedScopes: ["openid", "profile", "email", "groups"]
+          requestedScopes: ["openid", "profile", "email", "groups"]

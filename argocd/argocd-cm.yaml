@@ -16,3 +16,4 @@ data:
         config:
           issuer: http://keycloak.homelab.com/realms/kubernetes
           clientID: argocd
+        requestedScopes: ["openid", "profile", "email", "groups"]

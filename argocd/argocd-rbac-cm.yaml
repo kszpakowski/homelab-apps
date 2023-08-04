@@ -1,0 +1,8 @@
+# https://argo-cd.readthedocs.io/en/stable/operator-manual/rbac/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+data:
+  policy.default: role:readonly
+  

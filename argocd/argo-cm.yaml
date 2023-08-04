@@ -1,0 +1,18 @@
+# https://github.com/dexidp/website/blob/main/content/docs/connectors/oidc.md
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  url: https://argocd.homelab.com
+  dex.config: |
+    connectors:
+      - type: oidc
+        id: keycloak
+        name: Keycloak
+        config:
+          issuer: http://keycloak.homelab.com/realms/kubernetes/
+          clientID: kubernetes
+
+          # Dex's issuer URL + "/callback"
+          redirectURI: http://127.0.0.1:5556/callback

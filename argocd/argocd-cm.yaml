@@ -9,12 +9,9 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   url: https://argocd.homelab.com
-  dex.config: |
-    connectors:
-      - type: oidc
-        id: keycloak
-        name: Keycloak
-        config:
-          issuer: http://keycloak.homelab.com/realms/kubernetes
-          clientID: argocd
-          
+  oidc.config: |
+    id: keycloak
+    name: Keycloak
+    issuer: http://keycloak.homelab.com/realms/kubernetes
+    clientID: argocd
+    requestedScopes: ["openid", "profile", "email", "groups"]

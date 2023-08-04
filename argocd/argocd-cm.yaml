@@ -19,3 +19,11 @@ data:
 
           # Dex's issuer URL + "/callback"
           redirectURI: http://argocd-dex-server:5556/callback
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: e2ae5b8b705e0c0f16c7
+          clientSecret: test
+          orgs:
+          - name: k13i

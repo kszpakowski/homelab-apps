@@ -11,7 +11,7 @@ spec:
       - env: uat
   template:
     metadata:
-      name: 'crm-{{cluster}}'
+      name: 'crm-{{env}}'
     spec:
       project: digital-channels-project
       source:
@@ -19,7 +19,7 @@ spec:
         targetRevision: HEAD
         path: crm
       destination:
-        namespace: 'crm-{{cluster}}'
+        namespace: 'crm-{{env}}'
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:

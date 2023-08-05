@@ -5,7 +5,7 @@ metadata:
   name: argocd-rbac-cm
 data:
   # policy.default: role:readonly
-  scopes: '[email, groups]'
+  # scopes: '[email, groups]'
   policy.csv: |
     g, ArgoCDAdmins, role:admin
   

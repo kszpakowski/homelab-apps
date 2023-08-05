@@ -14,6 +14,6 @@ spec:
   - name: read-only
     description: Read-only privileges to digital-channels-project
     policies:
-    - p, proj:my-project:read-only, applications, get, digital-channels-project/*, allow
+    - p, proj:digital-channels-project:read-only, applications, get, digital-channels-project/*, allow
     groups:
     - DIGITAL_CHANNELS_DEV

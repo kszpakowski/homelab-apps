@@ -7,10 +7,11 @@ spec:
   sourceRepos:
   - '*'
   destinations:
-  - namespace: 'nginx-demo'
-    server: '*'
   - namespace: 'crm-*'
     server: '*'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: 'namespace'
   roles:
   # A role which provides read-only access to all applications in the project
   - name: read-only

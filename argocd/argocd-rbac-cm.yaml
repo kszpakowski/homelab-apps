@@ -5,7 +5,7 @@ metadata:
   name: argocd-rbac-cm
 data:
   policy.csv: |
-    g, ArgoCDAdmins, role:admin
-    g, web_channels_devs, role: wc_dev
-    p, role:wc_dev, appliactions, get, default/nginx-demo, allow
+    g, ARGO_CD_ADMIN, role:admin
+    g, DIGITAL_CHANNELS_DEV, role: dc_dev
+    p, role:dc_dev, appliactions, get, default/nginx-demo, allow
   

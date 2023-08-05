@@ -6,6 +6,4 @@ metadata:
 data:
   policy.csv: |
     g, ARGO_CD_ADMIN, role:admin
-    g, DIGITAL_CHANNELS_DEV, role: dc_dev
-    p, role:dc_dev, appliactions, get, default/nginx-demo, allow
   

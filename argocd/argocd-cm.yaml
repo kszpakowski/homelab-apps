@@ -13,13 +13,4 @@ data:
     name: Keycloak
     issuer: http://keycloak.homelab.com/realms/kubernetes
     clientID: argocd
-    # clientSecret: $oidc.keycloak.clientSecret
     requestedScopes: ["openid", "profile", "email", "groups"]
-  # dex.config: |
-  #   connectors:
-  #     - type: oidc
-  #       id: keycloak
-  #       name: Keycloak
-  #       config:
-  #         issuer: http://keycloak.homelab.com/realms/kubernetes
-  #         clientID: argocd

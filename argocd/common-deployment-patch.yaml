@@ -6,7 +6,7 @@ spec:
   revisionHistoryLimit: 0
   template:
     spec:
-      hostAliases:
+      hostAliases: #TODO Configure DNS instead
         - ip: "192.168.1.121"
           hostnames:
           - "keycloak.homelab.com"

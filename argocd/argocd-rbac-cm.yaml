@@ -4,8 +4,8 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  # policy.default: role:readonly
-  # scopes: '[email, groups]'
   policy.csv: |
     g, ArgoCDAdmins, role:admin
+    g, web_channels_devs, role: wc_dev
+    p, role:wc_dev, appliactions, get, default/nginx-demo, allow
   

@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: digital-channels-project
+  namespace: argocd
+spec:
+  roles:
+  # A role which provides read-only access to all applications in the project
+  - name: read-only
+    description: Read-only privileges to digital-channels-project
+    policies:
+    - p, proj:my-project:read-only, applications, get, digital-channels-project/*, allow
+    groups:
+    - DIGITAL_CHANNELS_DEV

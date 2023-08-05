@@ -15,7 +15,7 @@ spec:
     repoURL: 'https://github.com/kszpakowski/homelab-apps.git'
     targetRevision: HEAD
   sources: []
-  project: default
+  project: digital-channels-project
   syncPolicy:
     automated:
       prune: true

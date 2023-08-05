@@ -12,6 +12,8 @@ spec:
   template:
     metadata:
       name: 'crm-{{env}}'
+      labels:
+        env: '{{env}}'
     spec:
       project: digital-channels-project
       source:

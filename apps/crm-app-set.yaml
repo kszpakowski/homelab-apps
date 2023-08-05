@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: crm
+spec:
+  generators:
+  - list:
+      elements:
+      - env: dev
+      - env: sit
+      - env: uat
+  template:
+    metadata:
+      name: 'crm-{{cluster}}'
+    spec:
+      project: digital-channels-project
+      source:
+        repoURL: https://github.com/kszpakowski/homelab-apps.git
+        targetRevision: HEAD
+        path: crm
+      destination:
+        namespace: 'crm-{{cluster}}'
+        server: 'https://kubernetes.default.svc'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

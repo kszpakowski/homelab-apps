@@ -11,7 +11,7 @@ spec:
     server: '*'
   clusterResourceWhitelist:
   - group: '*'
-    kind: 'namespace'
+    kind: 'Namespace'
   roles:
   # A role which provides read-only access to all applications in the project
   - name: read-only

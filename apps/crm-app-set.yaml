@@ -14,6 +14,7 @@ spec:
       name: 'crm-{{env}}'
       labels:
         env: '{{env}}'
+        app: crm
     spec:
       project: digital-channels-project
       source:

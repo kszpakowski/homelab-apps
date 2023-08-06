@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-issuer
 spec:
   rules:
   - http:
@@ -14,3 +16,7 @@ spec:
             port:
               name: http
     host: grafana.homelab.com
+  tls:
+  - hosts:
+    - grafana.example.com
+    secretName: grafana.homelab.com

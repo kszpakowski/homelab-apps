@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - base
 - ingress.yaml
-patches:
+patchesStrategicMerge:
 - replicas-count.yaml

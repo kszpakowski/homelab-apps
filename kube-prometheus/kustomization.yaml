@@ -4,5 +4,5 @@ resources:
 - base
 - ingress.yaml
 patchesStrategicMerge:
-- common-deployment-patch
+- common-deployment-patch.yaml
 - replicas-count.yaml

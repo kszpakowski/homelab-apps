@@ -7,14 +7,13 @@ endpoints:
 kind: EndpointSlice
 metadata:
   creationTimestamp: '2023-08-07T00:09:52Z'
-  generateName: monitoring-kube-scheduler-
   labels:
     app: monitoring-kube-scheduler
     app.kubernetes.io/instance: kube-prometheus
     endpointslice.kubernetes.io/managed-by: endpointslicemirroring-controller.k8s.io
     k8s-app: kube-scheduler
     kubernetes.io/service-name: monitoring-kube-scheduler
-  name: monitoring-kube-scheduler-7smlf
+  name: monitoring-kube-scheduler
   namespace: kube-system
 ports:
   - name: http-metrics

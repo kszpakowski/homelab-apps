@@ -6,13 +6,13 @@ endpoints:
   conditions: {}
 kind: EndpointSlice
 metadata:
-  name: monitoring-kube-proxy
+  name: kube-proxy
   labels:
-    app: monitoring-kube-proxy
+    app: kube-proxy
     app.kubernetes.io/instance: kube-prometheus
     endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
     jobLabel: kube-proxy
-    kubernetes.io/service-name: monitoring-kube-proxy
+    kubernetes.io/service-name: kube-proxy
     service.kubernetes.io/headless: ''
   namespace: kube-system
 ports: 

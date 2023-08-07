@@ -3,6 +3,7 @@ apiVersion: discovery.k8s.io/v1
 endpoints:
   - addresses:
       - 192.168.1.121
+    conditions: {}
 kind: EndpointSlice
 metadata:
   creationTimestamp: '2023-08-07T00:09:52Z'

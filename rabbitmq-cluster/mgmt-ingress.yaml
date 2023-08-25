@@ -7,7 +7,7 @@ metadata:
     cert-manager.io/cluster-issuer: ca-issuer
 spec:
   tls:
-    - secretName: ingress-tls-demo-tls
+    - secretName: rabbitmq-mgmt-tls
       hosts:
         - rabbitmq-mgmt.homelab.com
   rules:

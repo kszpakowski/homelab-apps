@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rabbit-mq-cluster-one
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: ca-issuer
+spec:
+  tls:
+    - secretName: ingress-tls-demo-tls
+      hosts:
+        - rabbitmq-mgmt.homelab.com
+  rules:
+  - host: rabbitmq-mgmt.homelab.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: one
+              port:
+                number: 15672

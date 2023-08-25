@@ -4,9 +4,9 @@ metadata:
   name: amqp-ingress
 spec:
   entryPoints:
-    - web
+    - amqp1
   routes:
-  - match: HostSNI(`amqp.homelab.com`)
+  - match: HostSNI(`*`)
     services:
     - name: one
       port: 5672

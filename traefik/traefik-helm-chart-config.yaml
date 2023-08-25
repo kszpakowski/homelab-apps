@@ -8,8 +8,8 @@ spec:
     image:
       name: traefik
       tag: v2.7.1
-    ports:
-      amqp1: 
-        port: 5672
-        expose: true
-        exposedPort: 5672
+    # ports:
+    #   amqp1: 
+    #     port: 5672
+    #     expose: true
+    #     exposedPort: 5672

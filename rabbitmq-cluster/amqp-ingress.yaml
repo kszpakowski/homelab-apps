@@ -7,7 +7,6 @@ spec:
     - web
   routes:
   - match: HostSNI(`amqp.homelab.com`)
-    priority: 10
     services:
     - name: one
       port: 5672

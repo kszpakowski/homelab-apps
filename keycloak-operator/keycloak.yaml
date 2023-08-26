@@ -13,7 +13,7 @@ spec:
     passwordSecret:
       name: keycloak-db-secret
       key: password
-  # http:
-    # tlsSecret: example-tls-secret
+  http:
+    tlsSecret: keycloak-tls
   hostname:
-    hostname: keycloak.homelab.com
+    hostname: keycloak2.homelab.com

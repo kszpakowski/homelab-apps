@@ -6,6 +6,7 @@ resources:
 - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/22.0.0/kubernetes/kubernetes.yml
 - keycloak-db-secret.yaml
 - keycloak.yaml
+- keycloak-tls-cert.yaml
 images:
 - name: quay.io/keycloak/keycloak-operator
   newName: kszpakowski/keycloak-operator

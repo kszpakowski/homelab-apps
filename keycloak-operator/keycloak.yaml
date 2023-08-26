@@ -4,6 +4,8 @@ metadata:
   name: kc
 spec:
   instances: 1
+  ingress:
+    enabled: false
   db:
     vendor: postgres
     host: postgres

@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: keycloak
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: HostSNI(`keycloak2.homelab.com`)
+    kind: Rule
+    services:
+    - name: kc-service
+      port: 8443
+  tls:
+    passthrough: true 

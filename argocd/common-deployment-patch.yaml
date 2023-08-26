@@ -10,5 +10,6 @@ spec:
         - ip: "192.168.1.121"
           hostnames:
           - "keycloak.homelab.com"
+          - "keycloak2.homelab.com"
           - "argocd.homelab.com"
           

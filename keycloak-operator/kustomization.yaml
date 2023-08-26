@@ -7,6 +7,7 @@ resources:
 - keycloak-db-secret.yaml
 - keycloak.yaml
 - keycloak-tls-cert.yaml
+- ingress-route.yaml
 - postgres/deployment.yaml
 - postgres/pvc.yaml
 - postgres/service.yaml

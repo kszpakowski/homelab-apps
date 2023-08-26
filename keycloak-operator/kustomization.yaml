@@ -8,6 +8,7 @@ resources:
 - keycloak/keycloak.yaml
 - keycloak/keycloak-tls-cert.yaml
 - keycloak/ingress-route.yaml
+- keycloak/kubernetes-realm-import.yaml
 - postgres/deployment.yaml
 - postgres/pvc.yaml
 - postgres/service.yaml

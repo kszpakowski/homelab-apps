@@ -12,3 +12,30 @@ spec:
       port: 8443
   tls:
     passthrough: true 
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: http-example.com-redirect-to-https
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: HostRegexp(`keycloak2.homelab.com`)
+      kind: Rule 
+      services:
+        - name: example
+          port: 80
+      middlewares:
+        - name: redirect-https
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-https
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+    port: "443"

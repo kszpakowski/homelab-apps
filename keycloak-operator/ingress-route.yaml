@@ -7,7 +7,7 @@ spec:
     - websecure
   routes:
   - match: HostSNI(`keycloak2.homelab.com`)
-    kind: Rule
+    # kind: Rule
     services:
     - name: kc-service
       port: 8443

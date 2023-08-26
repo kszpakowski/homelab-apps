@@ -12,6 +12,6 @@ data:
   admin.enabled: "false"
   oidc.config: |
     name: Keycloak
-    issuer: https://keycloak2.homelab.com/realms/kubernetes
+    issuer: http://keycloak.homelab.com/realms/kubernetes
     clientID: argocd
     requestedScopes: ["openid", "profile", "email", "groups"]

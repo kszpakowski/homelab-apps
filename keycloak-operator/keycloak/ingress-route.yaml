@@ -1,15 +1,4 @@
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: redirect-https
-  namespace: kube-system
-spec:
-  redirectScheme:
-    scheme: https
-    permanent: true
-    port: "443"
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
   name: keycloak
@@ -21,8 +10,5 @@ spec:
     services:
     - name: kc-service
       port: 8443
-    middlewares:
-    - name: redirect-https
-      namespace: kube-system
   tls:
     passthrough: true 

@@ -1,0 +1,9 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: crm-input-queue
+spec:
+  name: crm-input-queue
+  rabbitmqClusterReference:
+    name: one
+---

@@ -4,10 +4,10 @@ resources:
 - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/22.0.0/kubernetes/keycloaks.k8s.keycloak.org-v1.yml
 - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/22.0.0/kubernetes/keycloakrealmimports.k8s.keycloak.org-v1.yml
 - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/22.0.0/kubernetes/kubernetes.yml
-- keycloak-db-secret.yaml
-- keycloak.yaml
-- keycloak-tls-cert.yaml
-- ingress-route.yaml
+- keycloak/keycloak-db-secret.yaml
+- keycloak/keycloak.yaml
+- keycloak/keycloak-tls-cert.yaml
+- keycloak/ingress-route.yaml
 - postgres/deployment.yaml
 - postgres/pvc.yaml
 - postgres/service.yaml

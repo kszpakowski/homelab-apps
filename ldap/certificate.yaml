@@ -1,14 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: ldap-tls
-  labels:
-    app.kubernetes.io/component: server
+  name: ldap-crt
 spec:
   secretName: ldap-tls
   issuerRef:
     name: ca-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
   dnsNames:
   - homelab-directory.ldap.svc.cluster.local
-  - homelab-directory.ldap
-  - homelab-directory

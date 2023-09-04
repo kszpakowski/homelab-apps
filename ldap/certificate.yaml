@@ -9,4 +9,6 @@ spec:
     kind: ClusterIssuer
     group: cert-manager.io
   dnsNames:
-  - ldap-homelab-directory.svc.cluster.local
+  - ldap-homelab-directory.ldap.svc.cluster.local
+  - ldap-homelab-directory.ldap
+  - ldap-homelab-directory

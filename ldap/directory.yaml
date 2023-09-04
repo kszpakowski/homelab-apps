@@ -1,0 +1,16 @@
+apiVersion: ldap.gpu-ninja.com/v1alpha1
+kind: LDAPDirectory
+metadata:
+  name: homelab-directory
+  labels:
+    app.kubernetes.io/component: server
+spec:
+  image: ghcr.io/gpu-ninja/ldap-operator/openldap:latest
+  domain: homelab.com
+  organization: "My Homelab Org"
+  adminPasswordSecretRef:
+    name: admin-password
+  certificateSecretRef:
+    name: ldap-tls
+  storage:
+    size: 100Mi

@@ -1,0 +1,16 @@
+apiVersion: ldap.gpu-ninja.com/v1alpha1
+kind: LDAPUser
+metadata:
+  name: karol
+spec:
+  directoryRef:
+    name: homelab-directory
+  parentRef:
+    name: users
+    kind: LDAPOrganizationalUnit
+  username: karol
+  name: Karol
+  surname: Sz
+  email: karol.sz@homelab.com
+  passwordSecretRef:
+    name: karol-password

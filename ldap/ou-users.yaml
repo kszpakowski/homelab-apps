@@ -1,0 +1,9 @@
+apiVersion: ldap.gpu-ninja.com/v1alpha1
+kind: LDAPOrganizationalUnit
+metadata:
+  name: users
+spec:
+  directoryRef:
+    name: homelab-directory
+  name: users
+  description: "Homelab Users"

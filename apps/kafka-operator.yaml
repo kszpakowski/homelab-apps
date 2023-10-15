@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: strimzi
+  name: kafka-operator
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: ''
-    namespace: strimzi
+    namespace: kafka
     server: 'https://kubernetes.default.svc'
   source:
-    path: strimzi
+    path: kafka-operator
     repoURL: 'https://github.com/kszpakowski/homelab-apps.git'
     targetRevision: HEAD
   sources: []

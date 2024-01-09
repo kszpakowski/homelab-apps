@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: rag-worker
+  revisionHistoryLimit: 0
   template:
     metadata:
       labels:

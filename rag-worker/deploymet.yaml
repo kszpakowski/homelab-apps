@@ -17,6 +17,7 @@ spec:
       containers:
       - image: ghcr.io/kszpakowski/rag-worker:main
         name: rag-worker
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "128Mi"

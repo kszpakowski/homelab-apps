@@ -3,12 +3,12 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: release-name-cert-manager-webhook-ovh
+  name: kszpakowski-com-cert-manager-webhook-ovh
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 ---
 # Source: cert-manager-webhook-ovh/templates/rbac.yaml
@@ -16,11 +16,11 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: release-name-cert-manager-webhook-ovh:domain-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:domain-solver
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 rules:
   - apiGroups:
@@ -34,11 +34,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: release-name-cert-manager-webhook-ovh:flowcontrol-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:flowcontrol-solver
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 rules:
   - apiGroups:
@@ -56,11 +56,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: release-name-cert-manager-webhook-ovh:auth-delegator
+  name: kszpakowski-com-cert-manager-webhook-ovh:auth-delegator
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -69,23 +69,23 @@ roleRef:
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
-    name: release-name-cert-manager-webhook-ovh
+    name: kszpakowski-com-cert-manager-webhook-ovh
     namespace: default
 ---
 # Source: cert-manager-webhook-ovh/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: release-name-cert-manager-webhook-ovh:domain-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:domain-solver
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: release-name-cert-manager-webhook-ovh:domain-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:domain-solver
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
@@ -96,20 +96,20 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: release-name-cert-manager-webhook-ovh:flowcontrol-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:flowcontrol-solver
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: release-name-cert-manager-webhook-ovh:flowcontrol-solver
+  name: kszpakowski-com-cert-manager-webhook-ovh:flowcontrol-solver
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
-    name: release-name-cert-manager-webhook-ovh
+    name: kszpakowski-com-cert-manager-webhook-ovh
     namespace: "default"
 ---
 # Source: cert-manager-webhook-ovh/templates/rbac.yaml
@@ -119,12 +119,12 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: release-name-cert-manager-webhook-ovh:webhook-authentication-reader
+  name: kszpakowski-com-cert-manager-webhook-ovh:webhook-authentication-reader
   namespace: kube-system
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -133,19 +133,19 @@ roleRef:
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
-    name: release-name-cert-manager-webhook-ovh
+    name: kszpakowski-com-cert-manager-webhook-ovh
     namespace: default
 ---
 # Source: cert-manager-webhook-ovh/templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: release-name-cert-manager-webhook-ovh
+  name: kszpakowski-com-cert-manager-webhook-ovh
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
   type: ClusterIP
@@ -156,32 +156,32 @@ spec:
       name: https
   selector:
     app: cert-manager-webhook-ovh
-    release: release-name
+    release: kszpakowski-com
 ---
 # Source: cert-manager-webhook-ovh/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: release-name-cert-manager-webhook-ovh
+  name: kszpakowski-com-cert-manager-webhook-ovh
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
   replicas: 
   selector:
     matchLabels:
       app: cert-manager-webhook-ovh
-      release: release-name
+      release: kszpakowski-com
   template:
     metadata:
       labels:
         app: cert-manager-webhook-ovh
-        release: release-name
+        release: kszpakowski-com
     spec:
-      serviceAccountName: release-name-cert-manager-webhook-ovh
+      serviceAccountName: kszpakowski-com-cert-manager-webhook-ovh
       containers:
         - name: cert-manager-webhook-ovh
           image: "baarde/cert-manager-webhook-ovh:0.3.1"
@@ -215,7 +215,7 @@ spec:
       volumes:
         - name: certs
           secret:
-            secretName: release-name-cert-manager-webhook-ovh-webhook-tls
+            secretName: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
 ---
 # Source: cert-manager-webhook-ovh/templates/apiservice.yaml
 apiVersion: apiregistration.k8s.io/v1
@@ -225,16 +225,16 @@ metadata:
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
   annotations:
-    cert-manager.io/inject-ca-from: "default/release-name-cert-manager-webhook-ovh-webhook-tls"
+    cert-manager.io/inject-ca-from: "default/kszpakowski-com-cert-manager-webhook-ovh-webhook-tls"
 spec:
   group: acme.kszpakowski.com
   groupPriorityMinimum: 1000
   versionPriority: 15
   service:
-    name: release-name-cert-manager-webhook-ovh
+    name: kszpakowski-com-cert-manager-webhook-ovh
     namespace: default
   version: v1alpha1
 ---
@@ -243,18 +243,18 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: release-name-cert-manager-webhook-ovh-ca
+  name: kszpakowski-com-cert-manager-webhook-ovh-ca
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
-  secretName: release-name-cert-manager-webhook-ovh-ca
+  secretName: kszpakowski-com-cert-manager-webhook-ovh-ca
   duration: 43800h # 5y
   issuerRef:
-    name: release-name-cert-manager-webhook-ovh-selfsign
+    name: kszpakowski-com-cert-manager-webhook-ovh-selfsign
   commonName: "ca.cert-manager-webhook-ovh.cert-manager"
   isCA: true
 ---
@@ -263,22 +263,22 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: release-name-cert-manager-webhook-ovh-webhook-tls
+  name: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
-  secretName: release-name-cert-manager-webhook-ovh-webhook-tls
+  secretName: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
   duration: 8760h # 1y
   issuerRef:
-    name: release-name-cert-manager-webhook-ovh-ca
+    name: kszpakowski-com-cert-manager-webhook-ovh-ca
   dnsNames:
-  - release-name-cert-manager-webhook-ovh
-  - release-name-cert-manager-webhook-ovh.default
-  - release-name-cert-manager-webhook-ovh.default.svc
+  - kszpakowski-com-cert-manager-webhook-ovh
+  - kszpakowski-com-cert-manager-webhook-ovh.default
+  - kszpakowski-com-cert-manager-webhook-ovh.default.svc
 ---
 # Source: cert-manager-webhook-ovh/templates/pki.yaml
 # Create a selfsigned Issuer, in order to create a root CA certificate for
@@ -286,12 +286,12 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: release-name-cert-manager-webhook-ovh-selfsign
+  name: kszpakowski-com-cert-manager-webhook-ovh-selfsign
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
   selfSigned: {}
@@ -301,13 +301,13 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: release-name-cert-manager-webhook-ovh-ca
+  name: kszpakowski-com-cert-manager-webhook-ovh-ca
   namespace: "default"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
-    release: release-name
+    release: kszpakowski-com
     heritage: Helm
 spec:
   ca:
-    secretName: release-name-cert-manager-webhook-ovh-ca
+    secretName: kszpakowski-com-cert-manager-webhook-ovh-ca

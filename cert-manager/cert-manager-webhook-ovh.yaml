@@ -4,7 +4,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -70,7 +70,7 @@ subjects:
   - apiGroup: ""
     kind: ServiceAccount
     name: kszpakowski-com-cert-manager-webhook-ovh
-    namespace: default
+    namespace: cert-manager
 ---
 # Source: cert-manager-webhook-ovh/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -110,7 +110,7 @@ subjects:
   - apiGroup: ""
     kind: ServiceAccount
     name: kszpakowski-com-cert-manager-webhook-ovh
-    namespace: "default"
+    namespace: "cert-manager"
 ---
 # Source: cert-manager-webhook-ovh/templates/rbac.yaml
 # Grant the webhook permission to read the ConfigMap containing the Kubernetes
@@ -134,14 +134,14 @@ subjects:
   - apiGroup: ""
     kind: ServiceAccount
     name: kszpakowski-com-cert-manager-webhook-ovh
-    namespace: default
+    namespace: cert-manager
 ---
 # Source: cert-manager-webhook-ovh/templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -163,7 +163,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -228,14 +228,14 @@ metadata:
     release: kszpakowski-com
     heritage: Helm
   annotations:
-    cert-manager.io/inject-ca-from: "default/kszpakowski-com-cert-manager-webhook-ovh-webhook-tls"
+    cert-manager.io/inject-ca-from: "cert-manager/kszpakowski-com-cert-manager-webhook-ovh-webhook-tls"
 spec:
   group: acme.kszpakowski.com
   groupPriorityMinimum: 1000
   versionPriority: 15
   service:
     name: kszpakowski-com-cert-manager-webhook-ovh
-    namespace: default
+    namespace: cert-manager
   version: v1alpha1
 ---
 # Source: cert-manager-webhook-ovh/templates/pki.yaml
@@ -244,7 +244,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh-ca
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -252,7 +252,7 @@ metadata:
     heritage: Helm
 spec:
   secretName: kszpakowski-com-cert-manager-webhook-ovh-ca
-  duration: 43800h0m0s # 5y
+  duration: 43800h # 5y
   issuerRef:
     name: kszpakowski-com-cert-manager-webhook-ovh-selfsign
   commonName: "ca.cert-manager-webhook-ovh.cert-manager"
@@ -264,7 +264,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -272,13 +272,13 @@ metadata:
     heritage: Helm
 spec:
   secretName: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
-  duration: 8760h0m0s # 1y
+  duration: 8760h # 1y
   issuerRef:
     name: kszpakowski-com-cert-manager-webhook-ovh-ca
   dnsNames:
   - kszpakowski-com-cert-manager-webhook-ovh
-  - kszpakowski-com-cert-manager-webhook-ovh.default
-  - kszpakowski-com-cert-manager-webhook-ovh.default.svc
+  - kszpakowski-com-cert-manager-webhook-ovh.cert-manager
+  - kszpakowski-com-cert-manager-webhook-ovh.cert-manager.svc
 ---
 # Source: cert-manager-webhook-ovh/templates/pki.yaml
 # Create a selfsigned Issuer, in order to create a root CA certificate for
@@ -287,7 +287,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh-selfsign
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1
@@ -302,7 +302,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: kszpakowski-com-cert-manager-webhook-ovh-ca
-  namespace: "default"
+  namespace: "cert-manager"
   labels:
     app: cert-manager-webhook-ovh
     chart: cert-manager-webhook-ovh-0.3.1

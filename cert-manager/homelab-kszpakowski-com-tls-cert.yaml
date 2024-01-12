@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: wildcard-homelab-kszpakowski-com
+  namespace: "cert-manager"
 spec:
   dnsNames:
   - "*.homelab.kszpakowski.com"

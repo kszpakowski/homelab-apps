@@ -252,7 +252,7 @@ metadata:
     heritage: Helm
 spec:
   secretName: kszpakowski-com-cert-manager-webhook-ovh-ca
-  duration: 43800h # 5y
+  duration: 43800h0m0s # 5y
   issuerRef:
     name: kszpakowski-com-cert-manager-webhook-ovh-selfsign
   commonName: "ca.cert-manager-webhook-ovh.cert-manager"
@@ -272,7 +272,7 @@ metadata:
     heritage: Helm
 spec:
   secretName: kszpakowski-com-cert-manager-webhook-ovh-webhook-tls
-  duration: 8760h # 1y
+  duration: 8760h0m0s # 1y
   issuerRef:
     name: kszpakowski-com-cert-manager-webhook-ovh-ca
   dnsNames:

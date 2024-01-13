@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: crm
   labels:
-    app: keycloak
+    app: crm
 spec:
   containers:
     - name: nginx

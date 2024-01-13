@@ -1,4 +1,6 @@
-# How to configure local CA
+# Issuers configuration
+
+## How to configure local CA
 
 > MacOS requires [additional openssl configuration](https://github.com/jetstack/cert-manager/issues/279#issuecomment-365827793) as described below.
 
@@ -24,3 +26,15 @@
     ```sh
     kubectl -n cert-manager create secret generic ca-key-pair --from-file=tls.crt --from-file=tls.key --dry-run -o yaml | kubeseal -o yaml - > ca-sealed.yaml
     ```
+
+## Lets encrypt - ovh webhook
+
+https://github.com/baarde/cert-manager-webhook-ovh
+
+values.yaml
+
+```yaml
+groupName: acme.kszpakowski.com
+```
+
+`helm template -n cert-manager --name-template=kszpakowski-com . > cert-manager-webhook-ovh.yaml`

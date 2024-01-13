@@ -3,8 +3,8 @@ data:
   custom.conf: |-
     server:
         # Custom zone
-        local-zone: "homelab.com." redirect
-        local-data: "homelab.com. IN A 192.168.1.121"
+        local-zone: "homelab.kszpakowski.com." redirect
+        local-data: "homelab.kszpakowski.com. IN A 192.168.1.121"
 kind: ConfigMap
 metadata:
   name: custom-configmap

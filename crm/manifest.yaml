@@ -48,10 +48,11 @@ spec:
     - web
     - websecure
   routes:
-    - match: HostSNI(`crm.homelab.kszpakowski.com`)
+    - match: Host(`crm.homelab.kszpakowski.com`)
       kind: Rule
       services:
         - name: crm
           port: 80
   tls:
-    secretName: crm-tls
+    secretName: crm-cert
+  

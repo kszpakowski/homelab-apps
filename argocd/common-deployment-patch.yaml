@@ -12,4 +12,6 @@ spec:
           - "keycloak.homelab.com"
           - "keycloak2.homelab.com"
           - "argocd.homelab.com"
+          - "keycloak.homelab.kszpakowski.com"
+          - "argocd.homelab.kszpakowski.com"
           

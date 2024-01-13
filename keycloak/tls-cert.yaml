@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: keycloak-tls
+spec:
+  dnsNames:
+    - keycloak.homelab.kszpakowski.com
+  secretName: keycloak-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer

@@ -1,12 +1,11 @@
 # https://uthark.github.io/post/2021-10-06-running-pihole-kubernetes/
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   labels:
     app: unbound
   name: unbound
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: unbound

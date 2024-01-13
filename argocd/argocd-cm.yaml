@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   url: https://argocd.homelab.kszpakowski.com
-  # admin.enabled: "false"
+  admin.enabled: "false"
   oidc.config: |
     name: Keycloak
     issuer: https://keycloak.homelab.kszpakowski.com/realms/kubernetes

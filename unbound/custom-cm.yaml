@@ -2,6 +2,7 @@ apiVersion: v1
 data:
   custom.conf: |-
     server:
+        verbosity: 2
         # Custom zone
         local-zone: "homelab.kszpakowski.com." redirect
         local-data: "homelab.kszpakowski.com. IN A 192.168.1.121"

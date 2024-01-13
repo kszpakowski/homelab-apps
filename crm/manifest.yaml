@@ -48,33 +48,10 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`crm.homelab.kszpakowski.com`)
+    - match: HostSNI(`crm.homelab.kszpakowski.com`)
       kind: Rule
       services:
         - name: crm
           port: 80
   tls:
     secretName: crm-tls
----
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: crm
-#   annotations:
-#     cert-manager.io/cluster-issuer: letsencrypt
-# spec:
-#   rules:
-#     - host: crm.homelab.kszpakowski.com
-#       http:
-#         paths:
-#           - pathType: Prefix
-#             path: /
-#             backend:
-#               service:
-#                 name: crm
-#                 port:
-#                   number: 80
-#   tls:
-#     - hosts:
-#         - crm.homelab.kszpakowski.com
-#       secretName: crm-cert

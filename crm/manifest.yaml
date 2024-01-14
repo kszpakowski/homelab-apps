@@ -39,23 +39,6 @@ spec:
     name: letsencrypt
     kind: ClusterIssuer
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: crm
-spec:
-  entryPoints:
-    - web
-    - websecure
-  routes:
-    - match: Host(`crm.homelab.kszpakowski.com`)
-      kind: Rule
-      services:
-        - name: crm
-          port: 80
-  tls:
-    secretName: crm-cert
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -65,10 +48,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - crm2.homelab.kszpakowski.com
-      secretName: crm2-cert
+      - crm.homelab.kszpakowski.com
+      secretName: crm-cert
   rules:
-  - host: "crm2.homelab.kszpakowski.com"
+  - host: "crm.homelab.kszpakowski.com"
     http:
       paths:
       - path: /

@@ -60,7 +60,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: crm
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  tls:
+    - hosts:
+      - crm2.homelab.kszpakowski.com
+      secretName: crm2-cert
   rules:
   - host: "crm2.homelab.kszpakowski.com"
     http:

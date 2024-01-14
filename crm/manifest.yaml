@@ -55,4 +55,20 @@ spec:
           port: 80
   tls:
     secretName: crm-cert
-  
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: crm
+spec:
+  rules:
+  - host: "crm2.homelab.kszpakowski.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: crm
+            port:
+              number: 80

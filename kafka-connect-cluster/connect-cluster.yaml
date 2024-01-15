@@ -5,7 +5,11 @@ metadata:
 spec:
   version: 3.6.1
   replicas: 1
-  bootstrapServers: customer-platforms-kafka-bootstrap:9092
+  bootstrapServers: customer-platforms-kafka-bootstrap:9093
+  tls:
+    trustedCertificates:
+      - secretName: customer-platforms-cluster-ca-cert
+        certificate: ca.crt
   config:
     group.id: customer-platforms-connect-cluster
     offset.storage.topic: customer-platforms-connect-cluster-offsets
@@ -15,6 +19,6 @@ spec:
     value.converter: org.apache.kafka.connect.json.JsonConverter
     key.converter.schemas.enable: true
     value.converter.schemas.enable: true
-    config.storage.replication.factor: 3
-    offset.storage.replication.factor: 3
-    status.storage.replication.factor: 3
+    config.storage.replication.factor: -1
+    offset.storage.replication.factor: -1
+    status.storage.replication.factor: -1

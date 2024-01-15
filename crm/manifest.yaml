@@ -27,18 +27,6 @@ spec:
   selector:
     app: crm
 ---
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: crm-tls
-spec:
-  dnsNames:
-    - crm.homelab.kszpakowski.com
-  secretName: crm-cert
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka-cluster
+  name: kafka-connect-cluster
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     namespace: kafka
     server: 'https://kubernetes.default.svc'
   source:
-    path: kafka-connect
+    path: kafka-connect-cluster
     repoURL: 'https://github.com/kszpakowski/homelab-apps.git'
     targetRevision: HEAD
   sources: []

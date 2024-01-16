@@ -19,6 +19,9 @@ spec:
         imageTag: main
         kafka:
           bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
+        prometheus:
+          jmx:
+            enabled: false
   project: default
   syncPolicy:
     automated:

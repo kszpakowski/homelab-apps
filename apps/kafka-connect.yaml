@@ -15,8 +15,8 @@ spec:
     path: 'charts/cp-kafka-connect'
     helm:
       valuesObject:
-        # image: ghcr.io/kszpakowski/kafka-connect-custom-image
-        # imageTag: main
+        image: ghcr.io/kszpakowski/kafka-connect-custom-image
+        imageTag: main
         kafka:
           bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
         prometheus:

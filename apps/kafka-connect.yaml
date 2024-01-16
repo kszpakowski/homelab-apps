@@ -15,12 +15,9 @@ spec:
     - repoURL: 'https://github.com/confluentinc/cp-helm-charts.git'
       path: 'charts/cp-kafka-connect'
       helm:
-        valueFiles:
-        - $values/values.yaml
-    - repoURL: https://github.com/kszpakowski/homelab-apps.git
-      path: kafka-connect
-      ref: values
-    
+        valuesObject:
+          kafka:
+            bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
   project: default
   syncPolicy:
     automated:

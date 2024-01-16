@@ -23,6 +23,10 @@ spec:
         prometheus:
           jmx:
             enabled: false
+        configurationOverrides:
+          "config.storage.replication.factor": "-1"
+          "offset.storage.replication.factor": "-1"
+          "status.storage.replication.factor": "-1"
   project: default
   syncPolicy:
     automated:

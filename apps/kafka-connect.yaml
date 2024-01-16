@@ -15,8 +15,8 @@ spec:
     - repoURL: 'https://github.com/confluentinc/cp-helm-charts.git'
       path: 'charts/cp-kafka-connect'
       helm:
-      valueFiles:
-      - $values/values.yaml
+        valueFiles:
+        - $values/values.yaml
     - repoURL: https://github.com/kszpakowski/homelab-apps.git
       path: kafka-connect
       ref: values

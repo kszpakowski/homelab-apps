@@ -10,15 +10,15 @@ spec:
     name: ''
     namespace: kafka-connect
     server: 'https://kubernetes.default.svc'
-  sources:
-    - repoURL: 'https://github.com/confluentinc/cp-helm-charts.git'
-      path: 'charts/cp-kafka-connect'
-      helm:
-        valuesObject:
-          kafka:
-            image: ghcr.io/kszpakowski/kafka-connect-custom-image
-            imageTag: main
-            bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
+  source:
+    repoURL: 'https://github.com/confluentinc/cp-helm-charts.git'
+    path: 'charts/cp-kafka-connect'
+    helm:
+      valuesObject:
+        image: ghcr.io/kszpakowski/kafka-connect-custom-image
+        imageTag: main
+        kafka:
+          bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
   project: default
   syncPolicy:
     automated:

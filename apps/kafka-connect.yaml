@@ -24,6 +24,9 @@ spec:
           jmx:
             enabled: false
         configurationOverrides:
+          "plugin.path": "/opt/bitnami/kafka/libs/connectors"
+          "key.converter": "org.apache.kafka.connect.json.JsonConverter"
+          "value.converter": "org.apache.kafka.connect.json.JsonConverter"
           "config.storage.replication.factor": "-1"
           "offset.storage.replication.factor": "-1"
           "status.storage.replication.factor": "-1"

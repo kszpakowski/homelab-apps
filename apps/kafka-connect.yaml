@@ -16,6 +16,8 @@ spec:
       helm:
         valuesObject:
           kafka:
+            image: ghcr.io/kszpakowski/kafka-connect-custom-image
+            imageTag: main
             bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
   project: default
   syncPolicy:

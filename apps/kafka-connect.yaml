@@ -17,6 +17,7 @@ spec:
       valuesObject:
         image: ghcr.io/kszpakowski/kafka-connect-custom-image
         imageTag: main
+        imagePullPolicy: Always
         kafka:
           bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
         prometheus:

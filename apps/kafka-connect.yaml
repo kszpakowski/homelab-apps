@@ -13,7 +13,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://github.com/confluentinc/cp-helm-charts.git'
-    targetRevision: 'master'
+    targetRevision: master
     chart: cp-kafka-connect
   sources: []
   project: default

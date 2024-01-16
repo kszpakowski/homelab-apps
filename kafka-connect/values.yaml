@@ -1,2 +1,0 @@
-kafka:
-  bootstrapServers: "customer-platforms-kafka-bootstrap:9092"

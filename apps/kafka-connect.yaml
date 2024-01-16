@@ -19,7 +19,7 @@ spec:
         imageTag: main
         imagePullPolicy: Always
         kafka:
-          bootstrapServers: "customer-platforms-kafka-bootstrap:9092"
+          bootstrapServers: "customer-platforms-kafka-bootstrap.kafka:9092"
         prometheus:
           jmx:
             enabled: false

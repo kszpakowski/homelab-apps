@@ -9,8 +9,9 @@ spec:
     namespace: crm
   project: default
   source:
-    directory:
-      recurse: true
+    helm:
+      valuesFiles:
+        - values.yaml
     path: crm
     repoURL: https://github.com/kszpakowski/homelab-apps.git
     targetRevision: HEAD

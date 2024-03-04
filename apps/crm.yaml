@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     helm:
-      valuesFiles:
+      valueFiles:
         - values.yaml
     path: crm
     repoURL: https://github.com/kszpakowski/homelab-apps.git

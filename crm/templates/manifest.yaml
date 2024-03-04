@@ -4,7 +4,7 @@ metadata:
   name: crm
   labels:
     app: crm
-    kubeVersion: {{ .Capabilities.KubeVersion.Version }}
+    kubeVersion: {{ .Capabilities.KubeVersion.Version >= 1.12.0-0 }}
 spec:
   containers:
     - name: nginx

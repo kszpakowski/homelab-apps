@@ -8,4 +8,5 @@ spec:
   - "*.homelab.kszpakowski.com"
   issuerRef:
     name: letsencrypt
+    kind: ClusterIssuer
   secretName: wildcard-homelab-kszpakowski-com-tls

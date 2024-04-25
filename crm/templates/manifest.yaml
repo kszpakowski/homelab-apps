@@ -4,7 +4,7 @@ metadata:
   name: crm
   labels:
     app: crm
-    kubeVersion: {{ .Capabilities.KubeVersion.Version }}
+    namespace: {{ default (ge .Capabilities.KubeVersion.Minor "20" | ternary .Release.Namespace "openshift-monitoring-apps" ) .Values.metrics.monitoringNamespace }}
 spec:
   containers:
     - name: nginx

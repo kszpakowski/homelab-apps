@@ -513,7 +513,7 @@ spec:
       alwaysDisplayInConsole: false
       clientAuthenticatorType: client-secret
       redirectUris:
-      - https://argocd.homelab.com/*
+      - https://argocd.homelab.kszpakowski.com/*
       webOrigins:
       - "/*"
       notBefore: 0

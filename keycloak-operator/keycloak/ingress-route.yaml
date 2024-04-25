@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: HostSNI(`keycloak2.homelab.com`)
+  - match: HostSNI(`keycloak.homelab.com`)
     services:
     - name: kc-service
       port: 8443

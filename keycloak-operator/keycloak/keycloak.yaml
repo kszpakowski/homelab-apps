@@ -18,4 +18,4 @@ spec:
   http:
     tlsSecret: keycloak-tls
   hostname:
-    hostname: keycloak2.homelab.com
+    hostname: keycloak.homelab.com

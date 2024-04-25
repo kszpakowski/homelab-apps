@@ -5,8 +5,7 @@ metadata:
 spec:
   secretName: keycloak-tls
   dnsNames:
-  - keycloak2.homelab.com
+  - keycloak.homelab.com
   issuerRef:
-    name: ca-issuer
+    name: letsencrypt
     kind: ClusterIssuer
-    group: cert-manager.io

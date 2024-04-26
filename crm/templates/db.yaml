@@ -1,0 +1,23 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: crm-minimal-cluster
+spec:
+  teamId: "crm"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    # database owner
+    crm:
+    - superuser
+    - createdb
+
+    # role for application foo
+    # foo_user: # or 'foo_user: []'
+
+  #databases: name->owner
+  databases:
+    crm: crm
+  postgresql:
+    version: "16"

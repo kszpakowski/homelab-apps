@@ -2,6 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - https://raw.githubusercontent.com/zalando/postgres-operator/master/manifests/configmap.yaml
+- https://github.com/zalando/postgres-operator/raw/master/manifests/operator-service-account-rbac.yaml
+- https://github.com/zalando/postgres-operator/raw/master/manifests/postgres-operator.yaml
+- https://github.com/zalando/postgres-operator/raw/master/manifests/api-service.yaml
 # images:
 # - name: quay.io/keycloak/keycloak-operator
   # newName: kszpakowski/keycloak-operator

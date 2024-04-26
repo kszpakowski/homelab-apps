@@ -10,3 +10,7 @@ patches:
   target:
     kind: ServiceAccount
     name: postgres-operator
+images:
+- name: registry.opensource.zalan.do/acid/postgres-operator
+  newName: ghcr.io/zalando/postgres-operator
+  newTag: v1.11.0

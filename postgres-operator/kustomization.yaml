@@ -5,7 +5,8 @@ resources:
 - https://github.com/zalando/postgres-operator/raw/master/manifests/operator-service-account-rbac.yaml
 - https://github.com/zalando/postgres-operator/raw/master/manifests/postgres-operator.yaml
 - https://github.com/zalando/postgres-operator/raw/master/manifests/api-service.yaml
-# images:
-# - name: quay.io/keycloak/keycloak-operator
-  # newName: kszpakowski/keycloak-operator
-  # newTag: latest
+patches:
+- path: service-account-patch.yaml
+  target:
+    kind: ServiceAccount
+    name: postgres-operator

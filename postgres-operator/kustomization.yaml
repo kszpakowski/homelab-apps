@@ -6,11 +6,11 @@ resources:
 - https://github.com/zalando/postgres-operator/raw/master/manifests/postgres-operator.yaml
 - https://github.com/zalando/postgres-operator/raw/master/manifests/api-service.yaml
 patches:
-- path: ns-patch.yaml
+- path: service-account-patch.yaml
   target:
     kind: ServiceAccount
     name: postgres-operator
-- path: ns-patch.yaml
+- path: cluster-role-binding-patch.yaml
   target:
     kind: ClusterRoleBinding
     name: postgres-operator

@@ -4,9 +4,9 @@ resources:
 # - https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.7/manifests/install.yaml
 - tls-cert.yaml
 - ingress.yaml
-patchesStrategicMerge:
+# patchesStrategicMerge:
 # - argocd-cm.yaml
-- argocd-cmd-params-cm.yaml
+# - argocd-cmd-params-cm.yaml
 # - argocd-rbac-cm.yaml
 # patches:
 # - path: common-deployment-patch.yaml

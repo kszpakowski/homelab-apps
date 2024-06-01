@@ -1,3 +1,4 @@
+#TODO this should restart argocd server to apply insecure configuration
 apiVersion: v1
 kind: ConfigMap
 metadata:

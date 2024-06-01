@@ -111,3 +111,4 @@ data:
     # pass secrets to config files from env variables
     envsubst < /homebridge/config.json.template > /homebridge/config.json
     envsubst < /homebridge/auth.json.template > /homebridge/auth.json
+    envsubst <  /homebridge/persist/AccessoryInfo.0E83BA9DE9B8.json.template >  /homebridge/persist/AccessoryInfo.0E83BA9DE9B8.json

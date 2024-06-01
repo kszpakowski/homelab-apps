@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homebridge-configmap
+  namespace: homebridge
+data:
+  config.json: |
+    {
+        "bridge": {
+            "name": "Homebridge E9B8",
+            "username": "HOMEBRIDGE_USERNAME",
+            "port": 51450,
+            "pin": "$HOMEBRIDGE_PIN"
+        },
+        "accessories": [
+            {
+                "name": "Termometr 1",
+                "address": "58:2D:34:39:91:76",
+                "temperatureName": "Temperatura",
+                "humidityName": "Wilgotność",
+                "fakeGatoEnabled": false,
+                "timeout": 15,
+                "forceDiscovering": true,
+                "forceDiscoveringDelay": 2500,
+                "disableBatteryLevel": false,
+                "lowBattery": 10,
+                "temperatureOffset": 0,
+                "humidityOffset": 0,
+                "accessory": "Hygrotermograph"
+            },
+            {
+                "name": "Termometr 2",
+                "address": "4C:65:A8:DF:74:D7",
+                "temperatureName": "Temperatura",
+                "humidityName": "Wilgotność",
+                "fakeGatoEnabled": false,
+                "timeout": 15,
+                "forceDiscovering": true,
+                "forceDiscoveringDelay": 2500,
+                "disableBatteryLevel": false,
+                "lowBattery": 10,
+                "temperatureOffset": 0,
+                "humidityOffset": 0,
+                "accessory": "Hygrotermograph"
+            },
+            {
+                "accessory": "Http",
+                "name": "Jaeger",
+                "on_url": "http://192.168.1.162/setState?type=switch&value=1",
+                "off_url": "http://192.168.1.162/setState?type=switch&value=0",
+                "http_method": "GET"
+            },
+            {
+                "accessory": "Http",
+                "name": "Banan",
+                "service": "Light",
+                "http_method": "GET",
+                "on_url": "http://192.168.1.153/light/on",
+                "off_url": "http://192.168.1.153/light/off",
+                "status_url": "http://192.168.1.153/light/status",
+                "switchHandling": "realtime",
+                "brightness_url": "http://192.168.1.153/light/brightness/%b",
+                "brightnesslvl_url": "http://192.168.1.153/light/brightness_value",
+                "brightnessHandling": "realtime"
+            }
+        ],
+        "platforms": [
+            {
+                "name": "Config",
+                "port": 8581,
+                "auth": "form",
+                "theme": "auto",
+                "tempUnits": "c",
+                "lang": "en",
+                "platform": "config"
+            },
+            {
+                "username": "$DAIKIN_CLOUD_USERNAME",
+                "password": "$DAIKIN_CLOUD_PASS",
+                "showExtraFeatures": false,
+                "platform": "DaikinCloud"
+            }
+        ]
+    }
+
+  auth.json: |
+    [
+      {
+          "id": 1,
+          "username": "$HOMEBRIDGE_ADMIN_USER",
+          "name": "$HOMEBRIDGE_ADMIN_USER",
+          "hashedPassword": "$HOMEBRIDGE_ADMIN_PASSWORD",
+          "salt": "$HOMEBRIDGE_ADMIN_SALT",
+          "admin": true
+      }
+    ]
+  startup.sh: |
+    #!/bin/bash
+
+    # install plugins
+    /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-daikin-cloud 1.7.3 /var/lib/homebridge/node_modules
+    /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-http 0.0.9 /var/lib/homebridge/node_modules
+    /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-mi-hygrothermograph 3.4.2 /var/lib/homebridge/node_modules
+
+    # install envsubst
+    apt-get update
+    apt-get install gettext-base
+
+    # pass secrets to config files from env variables
+    envsubst < /homebridge/config.json.template > /homebridge/config.json
+    envsubst < /homebridge/auth.json.template > /homebridge/auth.json

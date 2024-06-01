@@ -7,7 +7,7 @@ data:
     {
         "bridge": {
             "name": "Homebridge E9B8",
-            "username": "HOMEBRIDGE_USERNAME",
+            "username": "$HOMEBRIDGE_USERNAME",
             "port": 51450,
             "pin": "$HOMEBRIDGE_PIN"
         },

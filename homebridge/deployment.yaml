@@ -1,0 +1,89 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: homebridge
+  labels:
+    app: homebridge
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: homebridge
+  template:
+    metadata:
+      labels:
+        app: homebridge
+    spec:
+      hostNetwork: true
+      containers:
+        - name: homebridge
+          image: homebridge/homebridge:2024-01-08
+          securityContext:
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+            allowPrivilegeEscalation: true
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: homebridge-volume
+              mountPath: /homebridge
+            - name: homebridge-config
+              mountPath: /homebridge/config.json.template
+              subPath: config.json
+            - name: homebridge-config
+              mountPath: /homebridge/auth.json.template
+              subPath: auth.json
+            - name: homebridge-config
+              mountPath: /homebridge/startup.sh
+              subPath: startup.sh
+          env:
+            - name: TERMINATE_ON_ERROR
+              value: "1"
+            - name: HOMEBRIDGE_CONFIG_UI
+              value: "1"
+            - name: HOMEBRIDGE_CONFIG_UI_PORT
+              value: "8090"
+            - name: PUID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+          envFrom:
+            - secretRef:
+                name: homebridge-secrets
+          ports:
+            - name: http
+              containerPort: 8090
+              protocol: TCP
+            - name: homebridge
+              containerPort: 51221
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8090
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8090
+          startupProbe:
+            httpGet:
+              path: /
+              port: 8090
+            failureThreshold: 30
+            periodSeconds: 10
+      volumes:
+      - name: homebridge-config
+        configMap:
+          name: homebridge-configmap
+          defaultMode: 0711
+      - name: homebridge-volume
+        persistentVolumeClaim:
+          claimName: homebridge-pvc

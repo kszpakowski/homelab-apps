@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homebridge-ui
+spec:
+  selector:
+    app: homebridge
+  ports:
+    - name: http
+      port: 8090
+      targetPort: 8090
+      protocol: TCP

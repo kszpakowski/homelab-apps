@@ -79,6 +79,9 @@ data:
                 "showExtraFeatures": false,
                 "platform": "DaikinCloud"
             }
+        ],
+        "disabledPlugins": [
+          "homebridge-http"
         ]
     }
 

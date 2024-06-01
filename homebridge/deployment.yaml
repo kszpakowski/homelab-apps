@@ -36,6 +36,7 @@ spec:
             - name: homebridge-accessory-info
               mountPath: /homebridge/persist/AccessoryInfo.0E83BA9DE9B8.json
               subPath: AccessoryInfo.0E83BA9DE9B8.json
+              readonly: false
             - name: homebridge-config
               mountPath: /homebridge/config.json.template
               subPath: config.json

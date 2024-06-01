@@ -33,8 +33,8 @@ spec:
               memory: "512Mi"
               cpu: "500m"
           volumeMounts:
-            # - name: homebridge-volume
-            #   mountPath: /homebridge
+            - name: homebridge-volume
+              mountPath: /homebridge
             - name: homebridge-config
               mountPath: /homebridge/config.json.template
               subPath: config.json
@@ -84,6 +84,6 @@ spec:
         configMap:
           name: homebridge-configmap
           defaultMode: 0711
-      # - name: homebridge-volume
-      #   persistentVolumeClaim:
-      #     claimName: homebridge-pvc
+      - name: homebridge-volume
+        persistentVolumeClaim:
+          claimName: homebridge-pvc

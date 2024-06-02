@@ -27,10 +27,10 @@ spec:
             allowPrivilegeEscalation: true
           resources:
             requests:
-              memory: "128Mi"
+              memory: "265Mi"
               cpu: "250m"
             limits:
-              memory: "512Mi"
+              memory: "768Mi"
               cpu: "500m"
           volumeMounts:
             - name: homebridge-accessory-info

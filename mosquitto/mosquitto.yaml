@@ -41,22 +41,22 @@ spec:
           limits:
             memory: "768Mi"
             cpu: "500m"
-      volumeMounts:
+        volumeMounts:
+        - name: mosquitto-persistent-storage
+          mountPath: /mosquitto/data
+        - name: mosquitto-config
+          mountPath: /mosquitto/config/mosquitto.conf
+          subPath: mosquitto.conf
+        - name: mosquitto-password
+          mountPath: /mosquitto/config/password.txt
+          subPath: password.txt
+      volumes:
       - name: mosquitto-persistent-storage
-        mountPath: /mosquitto/data
+        persistentVolumeClaim:
+          claimName: mq-pv-claim
       - name: mosquitto-config
-        mountPath: /mosquitto/config/mosquitto.conf
-        subPath: mosquitto.conf
+        configMap:
+          name: mosquitto-config
       - name: mosquitto-password
-        mountPath: /mosquitto/config/password.txt
-        subPath: password.txt
-  volumes:
-  - name: mosquitto-persistent-storage
-    persistentVolumeClaim:
-      claimName: mq-pv-claim
-  - name: mosquitto-config
-    configMap:
-      name: mosquitto-config
-  - name: mosquitto-password
-    secret:
-      secretName: mosquitto-password
+        secret:
+          secretName: mosquitto-password

@@ -22,6 +22,7 @@ spec:
   selector:
     matchLabels:
       app: mosquitto
+  revisionHistoryLimit: 0
   strategy:
     type: Recreate
   template:

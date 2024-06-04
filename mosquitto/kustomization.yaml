@@ -1,4 +1,5 @@
 resources:
 - mosquitto-config.yaml
 - mosquitto-password.yaml
+- service.yaml
 - mosquitto.yaml

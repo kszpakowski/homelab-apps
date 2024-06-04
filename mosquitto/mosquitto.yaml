@@ -7,7 +7,7 @@ metadata:
     app: mosquitto
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
@@ -31,33 +31,35 @@ spec:
         app: mosquitto
     spec:
       containers:
-      - image: eclipse-mosquitto:2.0.18-openssl
-        name: mosquitto
-        ports:
-        - containerPort: 1883
-        resources:
-          requests:
-            memory: "265Mi"
-            cpu: "250m"
-          limits:
-            memory: "768Mi"
-            cpu: "500m"
-        volumeMounts:
-        - name: mosquitto-persistent-storage
-          mountPath: /mosquitto/data
-        - name: mosquitto-config
-          mountPath: /mosquitto/config/mosquitto.conf
-          subPath: mosquitto.conf
-        - name: mosquitto-password
-          mountPath: /mosquitto/config/password.txt
-          subPath: password.txt
+        - image: eclipse-mosquitto:2.0.18-openssl
+          name: mosquitto
+          ports:
+            - name: mqtt
+              containerPort: 1883
+              protocol: TCP
+          resources:
+            requests:
+              memory: "265Mi"
+              cpu: "250m"
+            limits:
+              memory: "768Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: mosquitto-persistent-storage
+              mountPath: /mosquitto/data
+            - name: mosquitto-config
+              mountPath: /mosquitto/config/mosquitto.conf
+              subPath: mosquitto.conf
+            - name: mosquitto-password
+              mountPath: /mosquitto/config/password.txt
+              subPath: password.txt
       volumes:
-      - name: mosquitto-persistent-storage
-        persistentVolumeClaim:
-          claimName: mq-pv-claim
-      - name: mosquitto-config
-        configMap:
-          name: mosquitto-config
-      - name: mosquitto-password
-        secret:
-          secretName: mosquitto-password
+        - name: mosquitto-persistent-storage
+          persistentVolumeClaim:
+            claimName: mq-pv-claim
+        - name: mosquitto-config
+          configMap:
+            name: mosquitto-config
+        - name: mosquitto-password
+          secret:
+            secretName: mosquitto-password

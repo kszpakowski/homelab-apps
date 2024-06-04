@@ -7,10 +7,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 1883
-    targetPort: mqtt
-    protocol: TCP
-    name: mqtt
-    nodePort: 30007
+    - port: 1883
+      targetPort: mqtt
+      protocol: TCP
+      name: mqtt
+      nodePort: 30007
   selector:
     app: mosquitto

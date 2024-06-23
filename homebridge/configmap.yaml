@@ -80,7 +80,7 @@ data:
     #!/bin/bash
 
     # echo "install unverified plugins"
-    npm install --prefix /var/lib/homebridge --save homebridge-ble-lights@1.0.7
+    npm install --prefix /var/lib/homebridge --save homebridge-ble-lights@1.0.8
     
     echo "install verified plugins"
     /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-daikin-cloud 1.7.3 /var/lib/homebridge/node_modules

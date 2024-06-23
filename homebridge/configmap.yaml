@@ -41,26 +41,6 @@ data:
                 "temperatureOffset": 0,
                 "humidityOffset": 0,
                 "accessory": "Hygrotermograph"
-            },
-            {
-                "accessory": "Http",
-                "name": "Jaeger",
-                "on_url": "http://192.168.1.162/setState?type=switch&value=1",
-                "off_url": "http://192.168.1.162/setState?type=switch&value=0",
-                "http_method": "GET"
-            },
-            {
-                "accessory": "Http",
-                "name": "Banan",
-                "service": "Light",
-                "http_method": "GET",
-                "on_url": "http://192.168.1.153/light/on",
-                "off_url": "http://192.168.1.153/light/off",
-                "status_url": "http://192.168.1.153/light/status",
-                "switchHandling": "realtime",
-                "brightness_url": "http://192.168.1.153/light/brightness/%b",
-                "brightnesslvl_url": "http://192.168.1.153/light/brightness_value",
-                "brightnessHandling": "realtime"
             }
         ],
         "platforms": [
@@ -79,9 +59,6 @@ data:
                 "showExtraFeatures": false,
                 "platform": "DaikinCloud"
             }
-        ],
-        "disabledPlugins": [
-          "homebridge-http"
         ]
     }
 

@@ -58,6 +58,9 @@ data:
                 "password": "$DAIKIN_CLOUD_PASS",
                 "showExtraFeatures": false,
                 "platform": "DaikinCloud"
+            },
+            {
+                "platform":"ble-lights"
             }
         ]
     }

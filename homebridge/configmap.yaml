@@ -54,9 +54,13 @@ data:
                 "platform": "config"
             },
             {
-                "username": "$DAIKIN_CLOUD_USERNAME",
-                "password": "$DAIKIN_CLOUD_PASS",
+                "clientId": "$DAIKIN_CLOUD_CLIENT_ID",
+                "clientSecret": "$DAIKIN_CLOUD_CLIENT_SECRET",
+                "callbackServerExternalAddress": "https://homebridge.homelab.kszpakowski.com",
+                "callbackServerPort": "8582",
+                "oidcCallbackServerBindAddr": "0.0.0.0",
                 "showExtraFeatures": false,
+                "updateIntervalInMinutes": 15,
                 "platform": "DaikinCloud"
             }
         ]

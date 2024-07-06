@@ -5,7 +5,7 @@ metadata:
   namespace: "cert-manager"
 spec:
   dnsNames:
-  - "homebridge-daikin-callback.homebridge"
+  - "homebridge-daikin-callback.homebridge.cluser.local"
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer

@@ -10,3 +10,16 @@ spec:
       port: 8090
       targetPort: 8090
       protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homebridge-daikin-callback
+spec:
+  selector:
+    app: homebridge
+  ports:
+    - name: http
+      port: 8582
+      targetPort: 8582
+      protocol: TCP

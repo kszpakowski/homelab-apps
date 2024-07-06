@@ -66,6 +66,9 @@ spec:
             - name: homebridge
               containerPort: 51221
               protocol: TCP
+            - name: daikin-callback
+              containerPort: 8582
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /

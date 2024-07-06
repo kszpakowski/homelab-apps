@@ -24,14 +24,14 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: homebridge
+  name: daikin-callback
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   tls:
     - hosts:
       - daikin-callback.homelab.kszpakowski.com
-      secretName: homebridge-cert
+      secretName: daikin-callback-cert
   rules:
   - host: "homebridge.homelab.kszpakowski.com"
     http:

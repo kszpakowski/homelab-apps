@@ -56,7 +56,7 @@ data:
             {
                 "clientId": "$DAIKIN_CLOUD_CLIENT_ID",
                 "clientSecret": "$DAIKIN_CLOUD_CLIENT_SECRET",
-                "callbackServerExternalAddress": "homebridge.homelab.kszpakowski.com",
+                "callbackServerExternalAddress": "homebridge.homelab.kszpakowski.com/",
                 "callbackServerPort": "8582",
                 "oidcCallbackServerBindAddr": "0.0.0.0",
                 "showExtraFeatures": false,

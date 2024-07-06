@@ -33,7 +33,7 @@ spec:
       - daikin-callback.homelab.kszpakowski.com
       secretName: daikin-callback-cert
   rules:
-  - host: "homebridge.homelab.kszpakowski.com"
+  - host: "daikin-callback.homelab.kszpakowski.com"
     http:
       paths:
       - path: /

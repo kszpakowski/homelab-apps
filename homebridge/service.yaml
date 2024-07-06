@@ -19,7 +19,7 @@ spec:
   selector:
     app: homebridge
   ports:
-    - name: http
+    - name: https-daikin-callback
       port: 8582
       targetPort: 8582
       protocol: TCP

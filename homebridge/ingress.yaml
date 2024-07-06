@@ -42,4 +42,4 @@ spec:
           service:
             name: homebridge-daikin-callback
             port:
-              name: http
+              name: https-daikin-callback

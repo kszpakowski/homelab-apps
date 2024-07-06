@@ -20,26 +20,3 @@ spec:
             name: homebridge-ui
             port:
               name: http
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: daikin-callback
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
-spec:
-  tls:
-    - hosts:
-      - daikin-callback.homelab.kszpakowski.com
-      secretName: daikin-callback-cert
-  rules:
-  - host: "daikin-callback.homelab.kszpakowski.com"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: homebridge-daikin-callback
-            port:
-              name: https-callback

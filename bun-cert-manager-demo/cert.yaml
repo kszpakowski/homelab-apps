@@ -7,5 +7,5 @@ spec:
     - bun-cert-manager-demo.bun-cert-manager-demo
   secretName: tls-cert
   issuerRef:
-    name: ca-issuer
+    name: selfsigned-issuer
     kind: ClusterIssuer

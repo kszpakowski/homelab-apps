@@ -26,6 +26,8 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "250m"
+        ports:
+        - containerPort: 9443
         volumeMounts:
         - name: tls
           mountPath: /usr/src/app/tls

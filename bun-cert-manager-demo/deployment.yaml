@@ -15,7 +15,7 @@ spec:
         app: bun-cert-manager-demo
     spec:
       containers:
-      - image: gcr.io/kszpakowski/bun-cert-manager-demo:master
+      - image: ghcr.io/kszpakowski/bun-cert-manager-demo:master
         name: bun-cert-manager-demo
         resources:
           requests:

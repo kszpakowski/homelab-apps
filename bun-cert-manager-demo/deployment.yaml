@@ -18,6 +18,7 @@ spec:
       containers:
       - image: ghcr.io/kszpakowski/bun-cert-manager-demo:master
         name: bun-cert-manager-demo
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "128Mi"

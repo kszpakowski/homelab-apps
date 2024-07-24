@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bun-cert-manager-demo
+  name: bun-cert-manager-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bun-cert-manager-demo
+  template:
+    metadata:
+      labels:
+        app: bun-cert-manager-demo
+    spec:
+      containers:
+      - image: gcr.io/kszpakowski/bun-cert-manager-demo:master
+        name: bun-cert-manager-demo
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"

@@ -25,3 +25,11 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "250m"
+        volumeMounts:
+        - name: tls
+          mountPath: /usr/src/app/tls
+          readOnly: true
+  volumes:
+    - name: tls
+      secret:
+        secretName: tls-cert

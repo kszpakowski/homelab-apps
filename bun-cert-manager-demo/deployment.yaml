@@ -6,6 +6,7 @@ metadata:
   name: bun-cert-manager-demo
 spec:
   replicas: 2
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: bun-cert-manager-demo

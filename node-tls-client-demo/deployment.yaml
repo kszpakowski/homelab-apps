@@ -20,11 +20,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "32Mi"
-            cpu: "100m"
+            memory: "64Mi"
+            cpu: "150m"
           limits:
-            memory: "32Mi"
-            cpu: "100m"
+            memory: "64Mi"
+            cpu: "150m"
         env:
         - name: NODE_EXTRA_CA_CERTS
           value: ./ca/ca.pem

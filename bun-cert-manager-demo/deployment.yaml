@@ -30,7 +30,7 @@ spec:
         - containerPort: 9443
         volumeMounts:
         - name: tls
-          mountPath: /usr/src/app/tls
+          mountPath: /home/node/app/tls
           readOnly: true
       volumes:
         - name: tls

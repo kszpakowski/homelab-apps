@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: node-tls-client-demo
+  name: node-tls-client-demo
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: node-tls-client-demo
+  template:
+    metadata:
+      labels:
+        app: node-tls-client-demo
+    spec:
+      containers:
+      - image: ghcr.io/kszpakowski/node-tls-client-demo:master
+        name: node-tls-client-demo
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        env:
+        - name: NODE_EXTRA_CA_CERTS
+          value: ./ca/ca.pem
+        - name: FETCH_URL
+          value: bun-cert-manager-demo.bun-cert-manager-demo
+        - name: FETCH_INTERVAL_MS
+          value: "3000"
+
+        volumeMounts:
+        - name: ca
+          mountPath: /home/node/app/ca
+          readOnly: true
+      volumes:
+        - name: ca
+          configMap:
+            name: ca-cm

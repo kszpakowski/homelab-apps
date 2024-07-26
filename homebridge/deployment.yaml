@@ -45,9 +45,6 @@ spec:
             - name: homebridge-config
               mountPath: /homebridge/startup.sh
               subPath: startup.sh
-            - name: daikin-controller-cloud-tokenset
-              mountPath: /homebridge/.daikin-controller-cloud-tokenset
-              subPath: .daikin-controller-cloud-tokenset
           env:
             - name: TERMINATE_ON_ERROR
               value: "1"
@@ -94,6 +91,3 @@ spec:
       - name: homebridge-accessory-info
         secret:
           secretName: homebridge-accessory-info
-      - name: daikin-controller-cloud-tokenset
-        secret:
-          secretName: daikin-controller-cloud-tokenset

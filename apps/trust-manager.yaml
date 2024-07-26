@@ -10,6 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://charts.jetstack.io'
+    targetRevision: '0.12.0'
     chart: trust-manager
   project: default
   syncPolicy:

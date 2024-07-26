@@ -4,3 +4,4 @@ resources:
 - tls-cert.yaml
 - ingress.yaml
 - argocd-cmd-params-cm.yaml
+- argocd-repositories.yaml

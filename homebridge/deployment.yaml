@@ -20,7 +20,7 @@ spec:
       hostNetwork: true
       containers:
         - name: homebridge
-          image: homebridge/homebridge:2024-05-02
+          image: homebridge/homebridge:2024-10-02
           securityContext:
             readOnlyRootFilesystem: false
             runAsNonRoot: false

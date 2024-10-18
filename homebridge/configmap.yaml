@@ -84,6 +84,9 @@ data:
     /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-daikin-cloud 2.5.0 /var/lib/homebridge/node_modules
     /opt/homebridge/lib/node_modules/homebridge-config-ui-x/plugin-upgrade-install.sh homebridge-mi-hygrothermograph 3.4.2 /var/lib/homebridge/node_modules
 
+    echo "install unverified plugins"
+    npm i homebridge-http
+
     echo "install envsubst"
     apt-get update
     apt-get install gettext-base

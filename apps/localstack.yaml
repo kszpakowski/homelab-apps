@@ -16,6 +16,8 @@ spec:
       parameters:
         - name: mountDind.enabled
           value: "true"
+        - name: debug
+          value: "true"
   project: default
   syncPolicy:
     automated:

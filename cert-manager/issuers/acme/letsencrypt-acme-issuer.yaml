@@ -10,14 +10,18 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-account-key
     solvers:
-    - dns01:
-        webhook:
-          groupName: acme.kszpakowski.com
-          solverName: ovh
-          config:
-            endpoint: ovh-eu
-            applicationKey: 44c43c969be21335
-            applicationSecretRef:
-              key: applicationSecret
-              name: ovh-credentials
-            consumerKey: 5e28159bde0b03960354dba463839b17
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: API_TOKEN
+    #     webhook:
+    #       groupName: acme.kszpakowski.com
+    #       solverName: ovh
+    #       config:
+    #         endpoint: ovh-eu
+    #         applicationKey: 44c43c969be21335
+    #         applicationSecretRef:
+    #           key: applicationSecret
+    #           name: ovh-credentials
+    #         consumerKey: 5e28159bde0b03960354dba463839b17

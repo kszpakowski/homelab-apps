@@ -2,7 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.2/manifests/install.yaml
-- tls-cert.yaml
 - ingress.yaml
-- argocd-cmd-params-cm.yaml
+- tls-cert.yaml
 - argocd-repositories.yaml
+patches:
+- path: argocd-cmd-params-cm.yaml

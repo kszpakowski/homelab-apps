@@ -7,11 +7,14 @@ metadata:
 spec:
   destination:
     namespace: localstack
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   source:
-    repoURL: 'https://helm.localstack.cloud'
-    targetRevision: '0.6.16'
+    repoURL: https://helm.localstack.cloud
+    targetRevision: "0.6.16"
     chart: localstack
+    helm:
+      parameters:
+        - mountDind.enabled: true
   project: default
   syncPolicy:
     automated:

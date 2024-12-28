@@ -14,7 +14,8 @@ spec:
     chart: localstack
     helm:
       parameters:
-        - mountDind.enabled: true
+        - name: mountDind.enabled
+          value: "true"
   project: default
   syncPolicy:
     automated:

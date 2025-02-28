@@ -9,7 +9,7 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
   source:
-    path: cells/cell1
+    path: cells/cell2
     repoURL: 'https://github.com/kszpakowski/homelab-apps.git'
     targetRevision: HEAD
   sources: []

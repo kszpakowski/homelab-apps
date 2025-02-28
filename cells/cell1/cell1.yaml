@@ -1,0 +1,11 @@
+apiVersion: infra.kszpakowski.com/v1alpha1
+kind: xCell
+metadata:
+  name: cell
+spec:
+  account: '123456789012'
+  eks:
+    runtime:
+    - version: '1.31'
+    - version: '1.31'
+    - version: '1.32'

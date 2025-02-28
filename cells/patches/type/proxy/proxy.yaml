@@ -1,0 +1,6 @@
+apiVersion: infra.kszpakowski.com/v1alpha1
+kind: xCell
+metadata:
+  name: cell
+spec:
+  cellType: proxy

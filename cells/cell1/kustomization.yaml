@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../base
+
+components:
+  - ../patches/region/euc1
+  - ../patches/type/proxy
+patches:
+- path: cell1.yaml
+- target:
+    kind: xCell
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: cell1
